@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainForm.cs](./CS/Styling_With_FillEmptySpace/MainForm.cs) (VB: [MainForm.vb](./VB/Styling_With_FillEmptySpace/MainForm.vb))
+* [Program.cs](./CS/Styling_With_FillEmptySpace/Program.cs) (VB: [Program.vb](./VB/Styling_With_FillEmptySpace/Program.vb))
+* [XtraReport1.cs](./CS/Styling_With_FillEmptySpace/XtraReport1.cs) (VB: [XtraReport1.vb](./VB/Styling_With_FillEmptySpace/XtraReport1.vb))
+<!-- default file list end -->
 # How to extend the Odd/Even Detail band style to a page footer
 
 
