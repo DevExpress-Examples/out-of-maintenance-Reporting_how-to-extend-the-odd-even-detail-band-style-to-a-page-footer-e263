@@ -13,13 +13,13 @@ namespace StylingWithFillEmptySpace {
 
         int detailCount = 0;
 
-        private void Detail_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e) {
+        private void Detail_BeforePrint(object sender, CancelEventArgs e) {
             detailCount++;
         }
 
         private void XtraReport1_FillEmptySpace(object sender, BandEventArgs e) {
             int labelsCount = Convert.ToInt32(e.Band.Height / this.dummyDetailBandLabel.Height);
-            Size targetSize = new Size((this.PageWidth - this.Margins.Left - this.Margins.Right), e.Band.Height);
+            Size targetSize = new Size((int)(this.PageWidth - this.Margins.Left - this.Margins.Right), e.Band.Height);
             Size labelSize = new Size(this.dummyDetailBandLabel.Width, this.dummyDetailBandLabel.Height);
             Size targetSizeInPixels = XRConvert.Convert(targetSize, GraphicsDpi.HundredthsOfAnInch, GraphicsDpi.Pixel);
             Size labelSizeInPixels = XRConvert.Convert(labelSize, GraphicsDpi.HundredthsOfAnInch, GraphicsDpi.Pixel);

@@ -15,13 +15,13 @@ Namespace StylingWithFillEmptySpace
 
 		Private detailCount As Integer = 0
 
-		Private Sub Detail_BeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles Detail.BeforePrint
+		Private Sub Detail_BeforePrint(ByVal sender As Object, ByVal e As CancelEventArgs) Handles Detail.BeforePrint
 			detailCount += 1
 		End Sub
 
 		Private Sub XtraReport1_FillEmptySpace(ByVal sender As Object, ByVal e As BandEventArgs) Handles MyBase.FillEmptySpace
 			Dim labelsCount As Integer = Convert.ToInt32(e.Band.Height \ Me.dummyDetailBandLabel.Height)
-			Dim targetSize As New Size((Me.PageWidth - Me.Margins.Left - Me.Margins.Right), e.Band.Height)
+			Dim targetSize As New Size(CInt(Math.Truncate(Me.PageWidth - Me.Margins.Left - Me.Margins.Right)), e.Band.Height)
 			Dim labelSize As New Size(Me.dummyDetailBandLabel.Width, Me.dummyDetailBandLabel.Height)
 			Dim targetSizeInPixels As Size = XRConvert.Convert(targetSize, GraphicsDpi.HundredthsOfAnInch, GraphicsDpi.Pixel)
 			Dim labelSizeInPixels As Size = XRConvert.Convert(labelSize, GraphicsDpi.HundredthsOfAnInch, GraphicsDpi.Pixel)
